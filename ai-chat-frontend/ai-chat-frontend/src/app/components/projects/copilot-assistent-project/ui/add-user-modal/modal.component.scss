@@ -1,0 +1,51 @@
+@import '/node_modules/sass-rem/_rem.scss';
+@import '/node_modules/@appkit4/styles/scss/variables';
+
+::ng-deep .custom-button-wrapper .ap-button-primary {
+  color: var(--color-text-tertiary);
+  background-color: #D04A02 !important;
+}
+
+.custom-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.svg-icon {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.user-list {
+  margin-top: 20px;
+}
+
+
+.user-list li {
+  padding: 5px 0;
+}
+
+
+
+.list-container {
+  display: flex;
+
+  .ap-list-item {
+    padding-left: $spacing-3;
+  }
+}

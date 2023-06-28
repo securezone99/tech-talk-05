@@ -1,0 +1,25 @@
+<div class="chat-container">
+  <div class="container" >
+    <ap-feed>
+      <ng-container *ngFor="let comment of commentList">
+          <ap-feed-item
+              [comment]="comment">
+          </ap-feed-item>
+      </ng-container>
+    </ap-feed>
+    <div *ngFor="let block of processedBlocks">
+      <div [ngClass]="{
+        'code-block': block.isCode,
+        'non-code-text': !block.isCode,
+        'ai-assistant': block.origin === 'AI_ASSISTANT',
+        'user': block.origin === 'USER'
+      }">
+        <button *ngIf="block.isCode" class="copy-button" (click)="copyToClipboard(block.text)">Copy </button>
+        <pre *ngIf="block.isCode"  class="code-container"><code [highlight]="block.text"></code></pre>
+        <div *ngIf="!block.isCode" [innerHTML]="block.text"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

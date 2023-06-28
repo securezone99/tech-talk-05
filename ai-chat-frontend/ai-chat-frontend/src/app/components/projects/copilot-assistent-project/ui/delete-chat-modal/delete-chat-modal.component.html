@@ -1,0 +1,7 @@
+<ap-modal #deleteChatModal appModalId="delete-chat-modal" [title]="title" [footerStyle]="footerStyle" [contentStyle]="contentStyle">
+  <div class="custom-button-wrapper">
+  <ap-button [btnType]="'primary'" (onClick)="onClickDelete()" [label]="'Delete Chat'"></ap-button>
+  </div>
+  <ng-template ngTemplate="footer">
+  </ng-template>
+</ap-modal>

@@ -1,0 +1,30 @@
+@import '/node_modules/sass-rem/_rem.scss';
+@import '/node_modules/@appkit4/styles/scss/variables';
+
+.ap-navigation-demo-wrapper {
+  background-color: $color-background-default;
+  width: fit-content;
+}
+
+::ng-deep  .ap-modal-header {
+  min-height: 7rem !important;
+}
+
+
+::ng-deep {
+
+  .ap-navigation-item.selected,
+  .ap-navigation-item.active {
+    // custom styles for the selected item
+    font-weight: $font-weight-2;
+    background-color: #e8e8e8 !important;
+
+    .prefix-content .Appkit4-icon::before {
+      // custom styles for the selected prefix icon
+    }
+
+    .suffixIcon.Appkit4-icon::before {
+      // custom styles for the selected suffix icon
+    }
+  }
+}

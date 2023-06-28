@@ -1,0 +1,148 @@
+/*
+
+ highlight.js style for MikroTik RouterOS script
+
+*/
+
+.hljs {
+  color: #444;
+  background: rgba(15, 15, 15, 0.1); /* Dark gray almost black background color with 70% opacity */
+  padding: 10px; /* Some padding all around the text */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); /* Subtle 'floating' effect */
+  font-size: 16px; /* Adjust font size if necessary */
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+
+/* Base color: saturation 0; */
+
+.hljs-subst {
+  color: #444;
+}
+
+.hljs-comment {
+  color: #888888;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-meta .hljs-keyword,
+
+.hljs-doctag,
+.hljs-name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+.hljs-attribute {
+  color: #0E9A00;
+}
+
+.hljs-function {
+  color: #99069A;
+}
+
+/* User color: hue: 0 */
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #880000;
+    font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+/*     color: #696969 !important; */
+
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #BC6060;
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+
+/* Language color: hue: 90; */
+
+.hljs-literal {
+  color: #78A960;
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+.hljs-built_in,
+.hljs-bullet,
+.hljs-font-size
+.hljs-addition {
+  color: #0C9A9A;
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+.hljs-property {
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+/* Meta color: hue: 200 */
+
+.hljs-meta {
+  color: #1f7199;
+}
+
+
+.hljs-meta .hljs-string {
+  color: #4d99bf;
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+
+
+.hljs-params {
+  font-size: 16px;
+  line-height: 1.5rem;
+
+}
+/* Misc effects */
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

@@ -1,0 +1,44 @@
+<div class="left-container">
+  <div class="ap-sidebar">
+    <chat-sidebar (resetView)="resetView()" (onRedirect)="loadInitialMessages()"></chat-sidebar>
+  </div>
+
+  <div class="right-container">
+    <div class="ap-dropdown-wrapper" *ngIf="!(conversation$ | async)?.blobs?.length">
+      <ap-dropdown [list]='modelList' [selectType]="'single'" [title]="title" [(ngModel)]="selectedModel">
+      <ng-container *ngFor="let item of modelList; let i = index;">
+        <ap-dropdown-list-item #dropdownListItem [item]="item" [ariaLabel]="setAriaLabel(item)"
+          (onSelectItem)="onSelectItem($event)">
+          <ng-template *ngIf="item.iconName" ngTemplate="prefixTemp">
+            <span class="Appkit4-icon icon-{{item.iconName}}"></span>
+          </ng-template>
+          <ng-template *ngIf="item.badgeValue" ngTemplate="badgeTemp">
+            <ap-badge marginLeft="8" size="large" value="{{ item.badgeValue }}"></ap-badge>
+          </ng-template>
+          <ng-template *ngIf="item.descValue" ngTemplate="suffixTemp">
+            <span>{{item.descValue}}</span>
+          </ng-template>
+        </ap-dropdown-list-item>
+      </ng-container>
+    </ap-dropdown>
+    </div>
+    <div class="custom-scrollbar" #scrollContainer (scroll)="onScrollToTheTop()">
+    <img *ngIf="!(conversation$ | async)?.blobs?.length" class="image" src="assets/copilot-assistent-project/ext-illustration.svg" alt="" />
+    <p *ngIf="!(conversation$ | async)?.blobs?.length" class="title">Start a AI conversation!<br><br>Go ahead, give it a try.</p>
+    <div class="guidelines" *ngIf="wizzardState === wizzardStates.LANDING_PAGE && !(conversation$ | async)?.blobs?.length">
+        </div>
+    <div class="ap-chat-history-wrapper">
+
+      <ng-container  *ngFor="let blob of displayedMessages">
+        <chat-highlighter *ngIf="wizzardState === wizzardStates.NEW_CHAT || wizzardState === wizzardStates.EXISTING_CHAT || wizzardState === wizzardStates.CHAT_FEATURES" [message]="blob"></chat-highlighter>
+      </ng-container>
+
+      <div class="user-chat-field-wrapper" [@openClose]="wizzardState === wizzardStates.NEW_CHAT ? 'landing-page' : 'other-page'">
+        <user-chat-field  *ngIf="wizzardState === wizzardStates.NEW_CHAT || wizzardState === wizzardStates.EXISTING_CHAT || wizzardState === wizzardStates.CHAT_FEATURES" (userChatFieldModel)="userChatFieldModel($event)"></user-chat-field>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

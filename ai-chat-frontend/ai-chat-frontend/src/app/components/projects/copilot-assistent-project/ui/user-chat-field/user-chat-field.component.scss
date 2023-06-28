@@ -1,0 +1,31 @@
+@import '/node_modules/sass-rem/_rem.scss';
+@import '/node_modules/@appkit4/styles/scss/variables';
+
+.flex-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.simple-editor-container {
+  width: rem(800px); // adjust this to leave space for your SVG
+  padding: $spacing-7;
+}
+
+:host ::ng-deep .simple-editor-container {
+  .ck-editor__editable_inline {
+    max-height: rem(100px);
+  }
+}
+
+::ng-deep .ap-tooltip#tooltipDesc {
+  width: rem(340px);
+}
+
+::ng-deep .template-button {
+  margin-top: rem(10px);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content; // fits the width to its content
+}
+

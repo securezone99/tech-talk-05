@@ -1,0 +1,10 @@
+<div class="layout-container">
+  <!-- header component -->
+  <app-copilot-header class="header-fixed"></app-copilot-header>
+  <!-- main content panel -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-copilot-notification-modal></app-copilot-notification-modal>
+<ap-footer *ngIf="shouldShowFooter$ | async" [content]="footerContent" [type]="footerType"></ap-footer>

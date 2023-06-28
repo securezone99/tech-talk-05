@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  height: 100vh;
+  margin: auto 20%;
+  overflow-y: auto;
+
+  header {
+    text-align: center;
+  }
+
+  .bg-grey-w-border {
+    background-color: #7B7B7C;
+    border: #000000 solid;
+  }
+
+}

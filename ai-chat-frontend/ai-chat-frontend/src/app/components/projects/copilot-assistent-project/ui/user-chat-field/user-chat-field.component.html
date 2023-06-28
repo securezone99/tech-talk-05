@@ -1,0 +1,13 @@
+<div class="flex-container">
+  <ap-field [title]="'Enter your prompt here. (Use Shift+Enter for a new line)'">
+    <textarea appkit-field appAutoresize [(ngModel)]="chatMessage" maxlength="2000" (keydown.enter)="onKeyDown($event)"></textarea>
+    <ap-field-counter [value]="chatMessage" [max]="2000"></ap-field-counter>
+  </ap-field>
+</div>
+
+<div class="template-button">
+  <!-- <ap-button (click)="onTemplateIconClick()" [btnType]="'primary'" [label]="'Select Template'" ap-tooltip [tooltipId]="'tooltipDesc'"
+  ariaDescribedby="tooltipDesc" [tooltipContent]="'Select your Template. Create Templates by Chatting with GPT and click on the Create Template Icon'">
+  </ap-button> -->
+</div>
+<!-- <template-modal></template-modal> -->

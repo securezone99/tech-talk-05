@@ -1,0 +1,11 @@
+@import '/node_modules/sass-rem/_rem.scss';
+@import '/node_modules/@appkit4/styles/scss/variables';
+
+
+::ng-deep .custom-button-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+

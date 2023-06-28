@@ -1,0 +1,51 @@
+<app-loading class="full-screen-loading" *ngIf="isLoading$ | async"></app-loading>
+
+<ap-header [type]="'transparent'" (onClickLogo)="onClickLogo()">
+  <ng-template ngTemplate="sub-title" (onClick)="onClickGoToLicence()">
+    <div class="gen-ai-chat" (click)="onClickGoToHome()">GenAI-Chat</div>
+    <div class="powered-by" (click)="onClickGoToMeetup()">- Powered by the ALIance Team</div>
+    <div>
+    </div>
+  </ng-template>
+  <ng-template ngTemplate="options">
+    <!-- <ap-header-options-item [role]="'button'" [iconName]="'help-question-outline'" [label]="'Tutorials & FAQ'"
+      (onClick)="onClickGoToTutorials()">
+    </ap-header-options-item> -->
+    <ap-header-options-item [role]="'button'" [iconName]="'paper-outline'" [label]="'Licenses'"
+      (onClick)="onClickGoToLicence()">
+    </ap-header-options-item>
+    <ap-header-options-item [role]="'button'" [iconName]="'compass-outline'" [label]="'Privacy Notice'"
+      (onClick)="onClickGoToPrivacyNotice()">
+    </ap-header-options-item>
+
+    <ap-header-options-item [role]="'button'" [iconName]="'compass-outline'" [label]="'Intellectual Property'"
+      (onClick)="onClickGoToOGC()">
+    </ap-header-options-item>
+
+    <!-- Hide Permissions Not Needed yet -->
+    <!-- <div class="license-wrapper">
+      <ng-container *ngIf="user | async as _user">
+        <ap-header-options-item *ngIf="_user.isAdmin" [role]="'button'" [iconName]="'community-outline'" [label]="'Permissions'"
+          (onClick)="togglePermissionList()">
+        </ap-header-options-item>
+        <ng-container *ngIf="showPermissionList && _user.isAdmin">
+          <ul class="roles-list">
+            <li *ngFor="let role of (_user.roles || [])">{{ role }}</li>
+          </ul>
+        </ng-container>
+      </ng-container>
+    </div> -->
+
+    <ng-container *ngIf="user | async as _user">
+      <ap-header-options-item *ngIf="_user.isAdmin" [iconName]="'person-outline'" [label]="'Account'"
+        (onClick)="goToKeycloakAdminAccount()">
+      </ap-header-options-item>
+    </ng-container>
+    <ap-header-options-item [iconName]="'log-out-outline'" [label]="'Logout'" (onClick)="onClickLogout()">
+    </ap-header-options-item>
+  </ng-template>
+  <ng-template ngTemplate="user">
+    <ap-avatar *ngIf="user | async as _user" (onClick)="goToKeycloakAccount()" [name]="_user.initials" borderWidth="0"
+      diameter="40" [role]="'button'"></ap-avatar>
+  </ng-template>
+</ap-header>

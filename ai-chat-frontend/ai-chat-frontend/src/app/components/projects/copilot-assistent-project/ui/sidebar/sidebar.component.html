@@ -1,0 +1,36 @@
+<ap-navigation
+  [title]="'Appkit'"
+  [(selectedIndex)]="selectedIndex"
+  [(selectedSubIndex)]="selectedSubIndex"
+  [avatarName]="'VR'"
+  [navList]="navList"
+  [solid]="solid"
+  [hasHeader]="!simple"
+  [hasFooter]="simple"
+  [collapsed]="collapsed"
+  [toggleFromSuffixIconOnly]="true"
+  (onCollapsedItems)="onCollapsedSidebar($event)"
+  (onClick)="redirect($event)"
+  (onClickSuffixIcon)="onClickSuffixIcon($event)"
+  [selectedItemName]="currentTopic"
+>
+  <ng-container *ngFor="let navItem of navList; let i = index">
+    <div
+      class="nav-item"
+      [ngClass]="{ 'selected-item': currentTopic === navItem.name }"
+      (click)="redirect({ item: navItem })"
+    >
+      <span [class]="navItem.prefixIcon"></span>
+      {{ navItem.name }}
+      <span
+        *ngIf="navItem.suffixIcon"
+        [class]="navItem.suffixIcon"
+    (click)="onClickSuffixIcon({ item: navItem })"
+      ></span>
+    </div>
+  </ng-container>
+  <user-share-modal  class="user-share-modal"></user-share-modal>
+  <delete-chat-modal class="delete-chat-modal"></delete-chat-modal>
+  <!-- <template-modal></template-modal> -->
+</ap-navigation>
+

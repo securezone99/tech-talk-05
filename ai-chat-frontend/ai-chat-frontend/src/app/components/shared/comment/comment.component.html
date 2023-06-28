@@ -1,0 +1,11 @@
+<div class="feeds-comments-wrapper">
+  <ap-feed>
+    <ng-container *ngFor="let comment of commentList">
+        <ap-feed-item
+            [comment]="comment"
+            (onLikeStatusChange)="onLikeStatusChange($event)"
+            (onCommentClick)="onCommentClick($event)">
+        </ap-feed-item>
+    </ng-container>
+  </ap-feed>
+</div>

@@ -1,0 +1,17 @@
+
+.layout-container {
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+}
+
+app-copilot-notification-modal {
+  position: fixed; /* Fixed positioning makes the element positioned relative to the viewport */
+  bottom: 0; /* Position at the bottom */
+  width: 100%; /* Full width */
+  z-index: 1050; /* Overlap other elements */
+}

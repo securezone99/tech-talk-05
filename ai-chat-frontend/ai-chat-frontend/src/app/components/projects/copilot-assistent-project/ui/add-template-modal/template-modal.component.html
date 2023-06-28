@@ -1,0 +1,31 @@
+<!-- <ap-modal #templateModal appModalId="modal-template" [title]="title" [footerStyle]="footerStyle" [contentStyle]="contentStyle">
+  <ng-template ngTemplate="footer">
+  </ng-template>
+
+    <div class="custom-button-wrapper">
+    <p class='title'>Select Template(s):</p>
+    <div class='list-container'>
+      <ap-list [bordered]="true" size="small" [style]="'width:315px'">
+        <ap-list-item *ngFor="let item of userList; let i = index" [attr.role]="'option'" [attr.aria-label]="item.avatar + ',' + item.primary">
+        <ap-list-item-meta [attr.aria-hidden]="true">
+            <ap-list-item-meta-avatar>
+                <div class="ap-list-avatar-container">
+                    <ap-avatar [borderWidth]="'0'" [diameter]="'40'" [name]="item.avatar" [backgroundColor]="item.backgroundColor" [fontColor]="item.fontColor" [disabled]="true"></ap-avatar>
+                </div>
+            </ap-list-item-meta-avatar>
+            <ap-list-item-meta-title>
+                <div class="flex-container">
+                    <span>{{ item.primary }}</span>
+                    <img *ngIf="i !== 0" src="assets/copilot-assistent-project/circle-delete-outline.svg" alt="svg" (click)="onClickkDelete(item.primary)" class="svg-icon" />
+                </div>
+            </ap-list-item-meta-title>
+            <ap-list-item-meta-description>
+                <span>{{ item.description }}</span>
+            </ap-list-item-meta-description>
+        </ap-list-item-meta>
+    </ap-list-item>
+  </ap-list>
+  </div>
+  </div>
+</ap-modal>
+ -->

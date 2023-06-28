@@ -1,0 +1,41 @@
+@import '/node_modules/sass-rem/_rem.scss';
+@import '/node_modules/@appkit4/styles/scss/variables';
+
+.nty-demo-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+
+  >* {
+    margin: $spacing-7;
+  }
+}
+
+::ng-deep {
+  .ap-notification-image-box {
+    width: rem(284px);
+    height: rem(391px);
+    border-radius: $border-2;
+    background-color: $neutral-02;
+  }
+
+  .ap-notification-text-box {
+    margin: $spacing-6 0;
+    width: rem(417px);
+    height: $height-7;
+    font-size: $typography-text-size-3;
+    line-height: $typography-line-height-3;
+    letter-spacing: $letter-spacing-1;
+    text-align: center;
+    color: $neutral-14;
+  }
+
+  .ap-notification-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .ap-button-secondary.leftbtn {
+      margin-right: $spacing-3;
+    }
+  }
+}

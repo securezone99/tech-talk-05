@@ -1,0 +1,61 @@
+<ap-button [btnType]="'primary'" (onClick)="showModal()" [label]="'Open Modal'"></ap-button>
+<ap-modal #modal appModalId="modal-user-share" [title]="title" [footerStyle]="footerStyle" [contentStyle]="contentStyle">
+  <ng-template ngTemplate="footer">
+  </ng-template>
+  <ap-field [title]="'Email address: firstname.surname@de.pwc.com'">
+    <input appkit-field [(ngModel)]="email" (ngModelChange)="emailChange.next($event)" (keyup.enter)="onClickShare($event)" />
+
+  </ap-field>
+    <div class="custom-button-wrapper">
+    <p class='title' *ngIf="ldapUserList && ldapUserList.length">Add User:</p>
+    <div class='list-container' *ngIf="ldapUserList && ldapUserList.length">
+      <ap-list [bordered]="true" size="small" [style]="'width:315px'">
+        <ap-list-item
+        *ngFor="let item of ldapUserList; let i = index"
+        [attr.role]="'option'"
+        [attr.aria-label]="item.avatar + ',' + item.primary"
+        (click)="onLdapUserClick(item)">
+          <ap-list-item-meta [attr.aria-hidden]="true">
+            <ap-list-item-meta-avatar>
+                <div class="ap-list-avatar-container">
+                    <ap-avatar [borderWidth]="'0'" [diameter]="'40'" [name]="item.avatar" [backgroundColor]="item.backgroundColor" [fontColor]="item.fontColor" [disabled]="true"></ap-avatar>
+                </div>
+            </ap-list-item-meta-avatar>
+            <ap-list-item-meta-title>
+                <div class="flex-container">
+                    <span>{{ item.primary }}</span>
+                </div>
+            </ap-list-item-meta-title>
+            <ap-list-item-meta-description>
+                <span>{{ item.description }}</span>
+            </ap-list-item-meta-description>
+        </ap-list-item-meta>
+    </ap-list-item>
+    </ap-list>
+    </div>
+    <p class='title'>Shared with:</p>
+    <div class='list-container'>
+      <ap-list [bordered]="true" size="small" [style]="'width:315px'">
+        <ap-list-item *ngFor="let item of userList; let i = index" [attr.role]="'option'" [attr.aria-label]="item.avatar + ',' + item.primary">
+        <ap-list-item-meta [attr.aria-hidden]="true">
+            <ap-list-item-meta-avatar>
+                <div class="ap-list-avatar-container">
+                    <ap-avatar [borderWidth]="'0'" [diameter]="'40'" [name]="item.avatar" [backgroundColor]="item.backgroundColor" [fontColor]="item.fontColor" [disabled]="true"></ap-avatar>
+                </div>
+            </ap-list-item-meta-avatar>
+            <ap-list-item-meta-title>
+                <div class="flex-container">
+                    <span>{{ item.primary }}</span>
+                    <img *ngIf="i !== 0" src="assets/copilot-assistent-project/circle-delete-outline.svg" alt="svg" (click)="onClickkDelete(item.primary)" class="svg-icon" />
+                </div>
+            </ap-list-item-meta-title>
+            <ap-list-item-meta-description>
+                <span>{{ item.description }}</span>
+            </ap-list-item-meta-description>
+        </ap-list-item-meta>
+    </ap-list-item>
+  </ap-list>
+  </div>
+  </div>
+</ap-modal>
+
